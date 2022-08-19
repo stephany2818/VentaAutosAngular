@@ -1,0 +1,54 @@
+<div class="card">
+    <div class="card-header">
+        <h3>{{titlePage + auto?.marca + ' ' + auto?.modelo}}</h3>
+    </div>
+    <br>
+    <div class="container-fluid">
+        <table *ngIf="auto?.id != 0">
+                <tr>
+                    <td style="width: 1000px;">
+                            <tr>  
+                                <td style="width: 200px;">
+                                    <strong><label for="marca" class="form-label">Marca:</label><br>
+                                    <label for="modelo" class="form-label">Modelo:</label><br>
+                                    <label for="anio" class="form-label">Año:</label><br>
+                                    <label for="color" class="form-label">Color:</label><br>
+                                    <label for="kilometro" class="form-label">Kilómetro:</label><br>
+                                    <label for="precio" class="form-label">Precio:</label><br>
+                                    <label for="calificacion" class="form-label">Calificación:</label></strong><br>
+                                </td>
+                                <td>
+                                    <label class="form-label">{{auto?.marca}}</label><br>
+                                    <label class="form-label">{{auto?.modelo}}</label><br>
+                                    <label class="form-label">{{auto?.anio}}</label><br>
+                                    <label class="form-label">{{auto?.color}}</label><br>
+                                    <label class="form-label">{{auto?.kilometros}}</label><br>
+                                    <label class="form-label">{{auto?.precio}}</label><br>
+                                    <estrellas 
+                                        [calificacion] = "auto?.calificacion">
+                                    </estrellas>
+                                </td>
+                                <td style="width: 200px;"></td>
+                            </tr>
+                           <tr>
+                                <td></td>
+                                <td></td>   
+                                <td class="text-right">
+                                    <button class="btn btn-outline-primary" style="width: 110px;" (click)="goComprar()">Comprar</button>
+                                    <br>
+                                </td>
+                            </tr>             
+                    </td>
+                    <td>
+                        <label>{{auto?.imagenUrl}}</label>
+                        <p><img [src]="auto?.imagenUrl" 
+                            [style.width.px]="imagenWidth"
+                            [style.margin.px]="imagenMargin"></p>
+                    </td>
+                </tr>
+        </table>
+    </div>
+    <div class="card-footer">
+        <button class="btn btn-outline-secundary btn-dark" style="width: 110px;" (click)="onBack()">< Regreso</button>
+    </div>
+</div>

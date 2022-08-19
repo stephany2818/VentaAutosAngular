@@ -1,22 +1,13 @@
 <div>
-  <p>{{ titulo }}</p>
-</div>
-
-
-<!-- Container with dark background and white text color -->
-<div class="container bg-dark text-white">
-  <h1>This is a heading</h1>
-  <p>This is a paragraph of text.</p>
-</div>
-
-<!-- Container with light background -->
-<div class="container bg-light">
-  <h1>This is a heading</h1>
-  <p>This is a paragraph of text.</p>
-</div>
-
-<!-- Container with border -->
-<div class="container border">
-  <h1>This is a heading</h1>
-  <p>This is a paragraph of text.</p>
+  <nav class="navbar navbar-expand navbar-ligth bg-light">
+    <h4>{{ title }}</h4>
+    <ul class="nav nav-pills mx-3">
+      <li><a class="nav-link" routerLink="/inicio">Inicio</a></li>
+      <li><a class="nav-link" routerLink="/autos">Automóviles</a></li>
+      <li><a class="nav-link" routerLink="/clientes">Registrarse</a></li>
+    </ul>
+  </nav>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
 </div>
